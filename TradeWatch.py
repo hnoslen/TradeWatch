@@ -26,4 +26,10 @@ class Asset:
         assert self.sellPrice != None
         self.percentChangeToSell = (self.sellPrice-self.currentPrice)/self.currentPrice
         return self.percentChangeToSell
-    
+    def print(self):
+        if (self.percentChangeToSell < 0):
+            status = "Profitable"
+        else:
+            status = "Lossy"
+        print "{}\nStatus: {}\nPrice Change to Profit: {}\nCurrent Price: {}\n".format(self.name,status,self.percentChangeToSell, self.currentPrice)
+
